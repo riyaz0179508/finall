@@ -12,7 +12,6 @@ String? _dropDownvalue;
 String? translated_text;
 TextEditingController myController = TextEditingController();
 
-String pasteValue='';
 
 class EasyTranslator extends StatefulWidget {
   const EasyTranslator({Key? key}) : super(key: key);
@@ -49,23 +48,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
           // centerTitle: true,
           title: Text("Easy Translator", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
 
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: IconButton(
-                  onPressed: (){
-                    if(myController.text.trim() == ""){
-                      print('enter text');
-                    } else {
-                      print(myController.text);
-                      FlutterClipboard.copy(myController.text).then(( value ) =>
-                          print('copied'));
-                    }
-                  },
-                  icon: Icon(Icons.copy)),
-            )
 
-          ],
         ),
 
         body: SingleChildScrollView(
@@ -216,7 +199,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                   )
                       :Padding(
                     padding:  EdgeInsets.only(left: screenWidth*0.05, right: screenWidth*0.05,
-                      top: screenHeight*0.02, bottom: screenHeight*0.02),
+                      top: screenWidth*0.03, bottom: screenWidth*0.03),
                     child: Text("Translate"),
                   ),
 
@@ -440,13 +423,31 @@ class _EasyTranslatorState extends State<EasyTranslator> {
 
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.02),
-                  child: Container(
-                      margin: EdgeInsets.only(top: screenHeight*0.01),
-                      child: translated_text!=null?Text(translated_text!, style:
-                      TextStyle(fontSize: screenWidth*0.05),):Padding(
-                        padding:  EdgeInsets.all(screenWidth*0.02),
-                        child: Text(""),
-                      )
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                            onPressed: (){
+                              if(myController.text.trim() == ""){
+                                print('enter text');
+                              } else {
+                                print(myController.text);
+                                FlutterClipboard.copy(myController.text).then(( value ) =>
+                                    print('copied'));
+                              }
+                            },
+                            icon: Icon(Icons.copy)),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: screenHeight*0.01),
+                          child: translated_text!=null?Text(translated_text!, style:
+                          TextStyle(fontSize: screenWidth*0.05),):Padding(
+                            padding:  EdgeInsets.all(screenWidth*0.02),
+                            child: Text(""),
+                          )
+                      ),
+                    ],
                   ),
                 ),
 
