@@ -2,14 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:translator/translator.dart';
+import 'package:clipboard/clipboard.dart';
 
 
-
+late final String text;
 final _key=GlobalKey<FormState>();
 final translator = GoogleTranslator();
 String? _dropDownvalue;
 String? translated_text;
 TextEditingController myController = TextEditingController();
+
+String pasteValue='';
 
 class EasyTranslator extends StatefulWidget {
   const EasyTranslator({Key? key}) : super(key: key);
@@ -20,6 +23,7 @@ class EasyTranslator extends StatefulWidget {
 
 
 class _EasyTranslatorState extends State<EasyTranslator> {
+
 
   @override
   void initState() {
@@ -44,6 +48,24 @@ class _EasyTranslatorState extends State<EasyTranslator> {
           backgroundColor: Color(0xff0a7e8c),
           // centerTitle: true,
           title: Text("Easy Translator", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
+
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                  onPressed: (){
+                    if(myController.text.trim() == ""){
+                      print('enter text');
+                    } else {
+                      print(myController.text);
+                      FlutterClipboard.copy(myController.text).then(( value ) =>
+                          print('copied'));
+                    }
+                  },
+                  icon: Icon(Icons.copy)),
+            )
+
+          ],
         ),
 
         body: SingleChildScrollView(
@@ -60,7 +82,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                     child: Column(
                       children: [
                         Text("ইন্টারনেট কানেকশন অন করে নিন, আপনার টেক্সট লিখুন, এবং যে ভাষায় ট্রান্সলেশন করতে চান সেই ভাষা সিলেক্ট করে ট্রান্সলেট বাটনে প্রেস করুন।",style: TextStyle(
-                            fontSize: screenWidth*0.03, color: Colors.black45
+                            fontSize: screenWidth*0.03, color: Colors.grey
                         ),),
                         SizedBox(height: 30,),
                         Container(
@@ -193,7 +215,8 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                     ),
                   )
                       :Padding(
-                    padding:  EdgeInsets.only(left: screenWidth*0.05, right: screenWidth*0.05),
+                    padding:  EdgeInsets.only(left: screenWidth*0.05, right: screenWidth*0.05,
+                      top: screenHeight*0.02, bottom: screenHeight*0.02),
                     child: Text("Translate"),
                   ),
 
@@ -427,6 +450,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                   ),
                 ),
 
+
               ],
             ),
           ),
@@ -439,7 +463,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
     translator.translate(myController.text,to: locale).then((value){
       setState(() {
         translated_text=value.text;
-        // myController.text="";
+         myController.text="";
       });
     });
 
