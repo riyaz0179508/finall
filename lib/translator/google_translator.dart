@@ -423,41 +423,42 @@ class _EasyTranslatorState extends State<EasyTranslator> {
 
                 ),
 
-                Padding(
-                  padding:  EdgeInsets.all(screenWidth*0.02),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: IconButton(
-                              onPressed: (){
-                                FlutterClipboard.copy(translated_text!).then(( value ) {
-                                  print('copied');
-                                  Fluttertoast.showToast(msg: "Copied!");
-                                });
-                              },
-                              icon: Icon(Icons.copy)),
-                        ),
-                        InkWell(
-                          onLongPress: (){
-                            FlutterClipboard.copy(translated_text!).then(( value ) {
-                              print('copied');
-                              Fluttertoast.showToast(msg: "Copied!");
-                            });
-                          },
-                          child:
-                          Container(
 
-                              child: translated_text!=null?Text(translated_text!, style:
-                              TextStyle(fontSize: screenWidth*0.05,),):Padding(
-                                padding:  EdgeInsets.all(screenWidth*0.02),
-                                child: Text(""),
-                              )
-                          ),
-                        ),
-                      ],
+
+                Container(
+                  width: screenWidth,
+                  height: 20,
+                  child: IconButton(
+                      alignment: Alignment.topLeft,
+                      onPressed: (){
+                        FlutterClipboard.copy(translated_text!).then(( value ) {
+                          print('copied');
+                          Fluttertoast.showToast(msg: "Copied!");
+                        });
+                      },
+                      icon:
+                      Icon(Icons.copy,)),
+                ),
+
+                SizedBox(
+                  height: 10,
+                ),
+
+                InkWell(
+                  onLongPress: (){
+                    FlutterClipboard.copy(translated_text!).then(( value ) {
+                      print('copied');
+                      Fluttertoast.showToast(msg: "Copied!");
+                    });
+                  },
+                  child:
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Container(
+                      width: screenWidth,
+                        child: translated_text!=null?Text(translated_text!, style:
+                        TextStyle(fontSize: screenWidth*0.05,),):
+                        Text("")
                     ),
                   ),
                 ),
@@ -475,7 +476,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
     translator.translate(myController.text,to: locale).then((value){
       setState(() {
         translated_text=value.text;
-         myController.text="";
+        // myController.text="";
       });
     });
 
