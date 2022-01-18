@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'about_us.dart';
@@ -72,6 +73,20 @@ class _PracticePageState extends State<PracticePage> {
             focusColor: Colors.yellow,
             title: Text("About us"),
             leading: Icon(Icons.account_box_outlined),
+          ),
+
+          Divider(),
+
+          ListTile(
+            onTap: (){
+
+              Share.share("http://play.google.com/store/apps/details?id=com.instructivetech.testapp");
+            },
+            selectedTileColor: Color(0xff00ffff),
+            hoverColor: Colors.yellow,
+            focusColor: Colors.yellow,
+            title: Text("Share"),
+            leading: Icon(Icons.share),
           ),
           Divider(),
         ],

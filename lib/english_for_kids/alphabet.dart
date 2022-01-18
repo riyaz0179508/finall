@@ -1,4 +1,7 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:english_bd/translator/google_translator.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Alphabet extends StatefulWidget {
   const Alphabet({Key? key}) : super(key: key);
@@ -24,7 +27,8 @@ class _AlphabetState extends State<Alphabet> {
         padding:  EdgeInsets.all(screenWidth*0.02),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
+          child:
+          Column(
             children: [
               Container(
                 height: screenWidth,

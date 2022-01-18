@@ -1,7 +1,10 @@
 
+import 'package:clipboard/clipboard.dart';
 import 'package:english_bd/model/vucabulary_model.dart';
+import 'package:english_bd/translator/google_translator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'a_to_z_vucabulary.dart';
 
@@ -3911,7 +3914,8 @@ class _VucabularyState extends State<Vucabulary> {
       body:
       Padding(
         padding:  EdgeInsets.all(screenWidth*0.03),
-        child: Column(
+        child:
+        Column(
 
           children: [
             SizedBox(
@@ -3931,11 +3935,12 @@ class _VucabularyState extends State<Vucabulary> {
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>
                                 AToZVucabulary(vcbobj: vocModelList [index])));
                           },
-                          child: Container(
+                          child:
+                          Container(
                             width: screenWidth,
                             height: screenHeight*0.10,
-                            child: Card(
-                              child:
+                            child:
+                            Card(child:
                               Padding(
                                 padding:  EdgeInsets.only(top: screenHeight*0.03, left: screenHeight*0.03),
                                 child: Text(abcdVucabulary[index], style: TextStyle(

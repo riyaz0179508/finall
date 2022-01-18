@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:translator/translator.dart';
 import 'package:clipboard/clipboard.dart';
 
@@ -56,9 +57,10 @@ class _EasyTranslatorState extends State<EasyTranslator> {
           child:
           Form(
             key: _key,
-            child: Column(
+            child:
+            Column(
               children: [
-                SizedBox(height: 40,),
+                SizedBox(height: 20,),
                 Padding(
                   padding:  EdgeInsets.only(left:screenWidth*0.03, right: screenWidth*0.03 ),
                   child: Container(
@@ -67,7 +69,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                         Text("ইন্টারনেট কানেকশন অন করে নিন, আপনার টেক্সট লিখুন, এবং যে ভাষায় ট্রান্সলেশন করতে চান সেই ভাষা সিলেক্ট করে ট্রান্সলেট বাটনে প্রেস করুন।",style: TextStyle(
                             fontSize: screenWidth*0.03, color: Colors.grey
                         ),),
-                        SizedBox(height: 30,),
+                        SizedBox(height: 20,),
                         Container(
                           width: double.infinity,
                           // height: screenHeight*0.10,
@@ -209,7 +211,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
 
 
                     setState(() => isLoading = true);
-                    await Future.delayed(Duration(seconds: 2));
+                    await Future.delayed(Duration(seconds: 3));
                     setState(() => isLoading = false);
 
                     if(_dropDownvalue=="Bengali"){
@@ -423,31 +425,40 @@ class _EasyTranslatorState extends State<EasyTranslator> {
 
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.02),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: IconButton(
-                            onPressed: (){
-                              if(myController.text.trim() == ""){
-                                print('enter text');
-                              } else {
-                                print(myController.text);
-                                FlutterClipboard.copy(myController.text).then(( value ) =>
-                                    print('copied'));
-                              }
-                            },
-                            icon: Icon(Icons.copy)),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(top: screenHeight*0.01),
-                          child: translated_text!=null?Text(translated_text!, style:
-                          TextStyle(fontSize: screenWidth*0.05),):Padding(
-                            padding:  EdgeInsets.all(screenWidth*0.02),
-                            child: Text(""),
-                          )
-                      ),
-                    ],
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: IconButton(
+                              onPressed: (){
+                                FlutterClipboard.copy(translated_text!).then(( value ) {
+                                  print('copied');
+                                  Fluttertoast.showToast(msg: "Copied!");
+                                });
+                              },
+                              icon: Icon(Icons.copy)),
+                        ),
+                        InkWell(
+                          onLongPress: (){
+                            FlutterClipboard.copy(translated_text!).then(( value ) {
+                              print('copied');
+                              Fluttertoast.showToast(msg: "Copied!");
+                            });
+                          },
+                          child:
+                          Container(
+
+                              child: translated_text!=null?Text(translated_text!, style:
+                              TextStyle(fontSize: screenWidth*0.05,),):Padding(
+                                padding:  EdgeInsets.all(screenWidth*0.02),
+                                child: Text(""),
+                              )
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
 
