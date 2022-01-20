@@ -7,7 +7,8 @@ import 'about_us.dart';
 
 const _url = 'https://www.facebook.com/groups/838383100271833/?ref=share';
 const _urlTwo = 'https://www.facebook.com/riyazahmedofficial/';
-const _urlThree = 'https://youtube.com/channel/UCpGqtmMoNJWIuuaLbzd4ueg';
+const _urlThree = 'https://www.facebook.com/RiyazAhmed2930';
+const _urlFour = 'https://www.youtube.com/channel/UC3KWPMpAZrb8y20pIcBpzFQ';
 
 
 class PracticePage extends StatefulWidget {
@@ -48,32 +49,27 @@ class _PracticePageState extends State<PracticePage> {
 
           Divider(),
 
-
           ListTile(
-            onTap: (){
-
-            },
+            onTap: launchURLTwo,
             selectedTileColor: Color(0xff00ffff),
             hoverColor: Colors.yellow,
             focusColor: Colors.yellow,
-            title: Text("Feedback"),
-            leading: Icon(Icons.feedback_rounded),
+            title: Text("facebook Page"),
+            leading: Icon(Icons.paste),
           ),
-
 
           Divider(),
 
           ListTile(
-            onTap: (){
-
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutUs()));
-            },
+            onTap: launchURLFour,
             selectedTileColor: Color(0xff00ffff),
             hoverColor: Colors.yellow,
             focusColor: Colors.yellow,
-            title: Text("About us"),
-            leading: Icon(Icons.account_box_outlined),
+            title: Text("Youtube"),
+            leading: Icon(Icons.video_call),
           ),
+
+
 
           Divider(),
 
@@ -89,6 +85,30 @@ class _PracticePageState extends State<PracticePage> {
             leading: Icon(Icons.share),
           ),
           Divider(),
+
+          ListTile(
+            onTap: launchURLThree,
+            selectedTileColor: Color(0xff00ffff),
+            hoverColor: Colors.yellow,
+            focusColor: Colors.yellow,
+            title: Text("Developer Profile"),
+            leading: Icon(Icons.facebook),
+          ),
+          Divider(),
+
+
+          ListTile(
+            onTap: (){
+
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutUs()));
+            },
+            selectedTileColor: Color(0xff00ffff),
+            hoverColor: Colors.yellow,
+            focusColor: Colors.yellow,
+            title: Text("About us"),
+            leading: Icon(Icons.account_box_outlined),
+          ),
+          Divider(),
         ],
       ),
     );
@@ -98,8 +118,11 @@ class _PracticePageState extends State<PracticePage> {
 void _launchURL() async =>
     await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
 
-void launchURL() async =>
+void launchURLTwo() async =>
     await canLaunch(_urlTwo) ? await launch(_urlTwo) : throw 'Could not launch $_url';
 
-void launchURL1() async =>
+void launchURLThree() async =>
     await canLaunch(_urlThree) ? await launch(_urlThree) : throw 'Could not launch $_url';
+
+void launchURLFour() async =>
+    await canLaunch(_urlFour) ? await launch(_urlFour) : throw 'Could not launch $_url';
