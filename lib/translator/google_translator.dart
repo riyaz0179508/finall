@@ -1,10 +1,10 @@
 import 'dart:ui';
-
-import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/material.dart';
 import 'package:translator/translator.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+
 
 
 late final String text;
@@ -27,26 +27,15 @@ class EasyTranslator extends StatefulWidget {
 class _EasyTranslatorState extends State<EasyTranslator> {
 
 
+
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
   }
+
   bool isLoading=false;
 
-  Future checkConnection()async{
-    var connectionResult = await (Connectivity().checkConnectivity());
-    if(connectionResult==ConnectivityResult.mobile){
-      Fluttertoast.showToast(msg: "Connected with Mobile Data");
-    }
-
-    else if(connectionResult==ConnectivityResult.wifi){
-      Fluttertoast.showToast(msg: "Connected with wifi");
-    }
-    else {
-      Fluttertoast.showToast(msg: "No Internet Connection",textColor: Colors.red);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -228,10 +217,26 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                     child: Text("Translate"),
                   ),
 
+
                   onPressed: () async {
+
                     if(_key.currentState!.validate()){
                       setState(() => isLoading = true);
+
                     };
+
+                      var connectionResult = await (Connectivity().checkConnectivity());
+                      if(connectionResult==ConnectivityResult.mobile){
+                        Fluttertoast.showToast(msg: "Connected with Mobile Data");
+                      }
+
+                      else if(connectionResult==ConnectivityResult.wifi){
+                        Fluttertoast.showToast(msg: "Connected with wifi");
+                      }
+                      else {
+                        Fluttertoast.showToast(msg: "No Internet Connection");
+                      }
+
 
                     await Future.delayed(Duration(seconds: 5));
                     setState(() => isLoading = false);
