@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:translator/translator.dart';
 import 'package:clipboard/clipboard.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 
 late final String text;
@@ -12,6 +13,7 @@ final translator = GoogleTranslator();
 String? _dropDownvalue;
 String? translated_text;
 TextEditingController myController = TextEditingController();
+
 
 
 class EasyTranslator extends StatefulWidget {
@@ -31,6 +33,21 @@ class _EasyTranslatorState extends State<EasyTranslator> {
     super.initState();
   }
   bool isLoading=false;
+
+  Future checkConnection()async{
+    var connectionResult = await (Connectivity().checkConnectivity());
+    if(connectionResult==ConnectivityResult.mobile){
+      Fluttertoast.showToast(msg: "Connected with Mobile Data");
+    }
+
+    else if(connectionResult==ConnectivityResult.wifi){
+      Fluttertoast.showToast(msg: "Connected with wifi");
+    }
+    else {
+      Fluttertoast.showToast(msg: "No Internet Connection",textColor: Colors.red);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight=MediaQuery.of(context).size.height;
@@ -98,14 +115,20 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                   ),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(left:screenWidth*0.03, ),
+                  padding:  EdgeInsets.only(left:screenWidth*0.03,right:  screenWidth*0.03),
                   child:
                   Container(
                     margin: EdgeInsets.only(top: screenHeight*0.02),
-                    child: DropdownButton<String>(
+                    child: DropdownButtonFormField<String>(
+                      validator: (_dropDownvalue){
+                        if(_dropDownvalue== null || _dropDownvalue.isEmpty){
+                          return "Please Select language";
+                        }
 
+                      },
 
                       isExpanded: true,
+                      iconSize: 40,
 
                       hint: _dropDownvalue==null? Text("Select language"):
                       Text(_dropDownvalue!, style: TextStyle(color: Colors.blue),),
