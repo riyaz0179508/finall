@@ -72,10 +72,7 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                   child: Container(
                     child: Column(
                       children: [
-                        Text("ইন্টারনেট কানেকশন অন করে নিন, আপনার টেক্সট লিখুন, এবং যে ভাষায় ট্রান্সলেশন করতে চান সেই ভাষা সিলেক্ট করে ট্রান্সলেট বাটনে প্রেস করুন।",style: TextStyle(
-                            fontSize: screenWidth*0.03, color: Colors.grey
-                        ),),
-                        SizedBox(height: 20,),
+                        SizedBox(height: screenHeight*0.05,),
                         Container(
                           width: double.infinity,
                           // height: screenHeight*0.10,
@@ -226,20 +223,12 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                     };
 
                       var connectionResult = await (Connectivity().checkConnectivity());
-                      if(connectionResult==ConnectivityResult.mobile){
-                        Fluttertoast.showToast(msg: "Connected with Mobile Data");
-                      }
-
-                      else if(connectionResult==ConnectivityResult.wifi){
-                        Fluttertoast.showToast(msg: "Connected with wifi");
-                      }
-                      else {
+                      if(connectionResult==ConnectivityResult.none){
                         Fluttertoast.showToast(msg: "No Internet Connection");
                       }
 
 
-                    await Future.delayed(Duration(seconds: 5));
-                    setState(() => isLoading = false);
+                    await Future.delayed(Duration(seconds:1));
 
                     if(_dropDownvalue=="Bengali"){
                       translate_text("bn");
@@ -446,6 +435,8 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                       translate_text("uz");
                     }
 
+
+                    setState(() => isLoading = false);
                   },
 
                 ),
