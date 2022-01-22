@@ -206,12 +206,11 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                   ),
 
                   onPressed: () async {
-                    _key.currentState!.validate();
-                    if(isLoading) return;
+                    if(_key.currentState!.validate()){
+                      setState(() => isLoading = true);
+                    };
 
-
-                    setState(() => isLoading = true);
-                    await Future.delayed(Duration(seconds: 3));
+                    await Future.delayed(Duration(seconds: 5));
                     setState(() => isLoading = false);
 
                     if(_dropDownvalue=="Bengali"){
@@ -456,9 +455,10 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                     padding: const EdgeInsets.all(10),
                     child: Container(
                       width: screenWidth,
-                        child: translated_text!=null?Text(translated_text!, style:
+                        child: translated_text!=null?SelectableText(translated_text!, style:
                         TextStyle(fontSize: screenWidth*0.05,),):
-                        Text("")
+                        SelectableText("")
+
                     ),
                   ),
                 ),

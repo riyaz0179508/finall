@@ -1,5 +1,9 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
+
+String email="   easytechacdemybd@gmail.com";
 class AboutUs extends StatelessWidget {
   const AboutUs({Key? key}) : super(key: key);
 
@@ -46,8 +50,34 @@ class AboutUs extends StatelessWidget {
 
           ),
 
-          Text("   easytechacdemybd@gmail.com"
-              ,style: TextStyle(fontSize: screenWidth*0.04, color: Color(0xff0a7e8c), fontWeight: FontWeight.bold)),
+          Divider(),
+
+          Padding(
+            padding:  EdgeInsets.only(left: screenWidth*0.09),
+            child: Row(
+              children: [
+                SelectableText(email
+                    ,style: TextStyle(fontSize: screenWidth*0.04, color: Color(0xff0a7e8c), fontWeight: FontWeight.bold)),
+
+
+
+               SizedBox(
+                 width: screenWidth*0.05,
+               ),
+                IconButton(
+                    alignment: Alignment.topLeft,
+                    onPressed: (){
+                      FlutterClipboard.copy(email).then(( value ) {
+                        print('copied');
+                        Fluttertoast.showToast(msg: "Copied!");
+                      });
+                    },
+                    icon:
+                    Icon(Icons.copy,)),
+              ],
+            ),
+          ),
+
         ],
       ),
 

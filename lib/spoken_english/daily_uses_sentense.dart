@@ -1,5 +1,8 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:english_bd/translator/google_translator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Daily extends StatefulWidget {
   const Daily({Key? key}) : super(key: key);
@@ -547,7 +550,8 @@ class _DailyState extends State<Daily> {
 
         body: Padding(
           padding:  EdgeInsets.only(top: screenWidth*0.05),
-          child: Column(
+          child:
+          Column(
             children: [
 
               SizedBox(
@@ -558,7 +562,8 @@ class _DailyState extends State<Daily> {
                 child: ListView.builder(
                     itemCount: dailyUses.length,
                     itemBuilder: (context, index){
-                      return Container(
+                      return
+                        Container(
                           decoration: BoxDecoration(
                               border: Border.all(width: 0.1, color: Colors.lightBlue),
                               color:(index % 2== 0) ?Color(0xffd6ebff)
@@ -567,9 +572,11 @@ class _DailyState extends State<Daily> {
                           width: screenWidth,
                           child: Padding(
                             padding:  EdgeInsets.only(left: screenWidth*0.04, top: screenWidth*0.06, bottom: screenWidth*0.06),
-                            child: Text(dailyUses[index], style: TextStyle(fontSize: screenWidth*0.04,
+                            child: SelectableText(dailyUses[index], style: TextStyle(fontSize: screenWidth*0.04,
                                 fontWeight: FontWeight.bold,color: Color(0xff003153)),),
-                          ));
+
+                          )
+                      );
                     }
                 ),
               ),

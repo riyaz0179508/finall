@@ -17,7 +17,7 @@ class _WrittenSiteState extends State<WrittenSite> {
         toolbarHeight: screenHeight*0.08,
         backgroundColor: Color(0xff0a7e8c),
         centerTitle: true,
-        title: Text("Written Site", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
+        title: SelectableText("Written Site", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
       ),
 
       body: SingleChildScrollView(
@@ -34,7 +34,7 @@ class _WrittenSiteState extends State<WrittenSite> {
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
                   child: Center(
-                    child: Text("Rules for writing Application",
+                    child: SelectableText("Rules for writing Application",
                       style: TextStyle(fontSize: screenWidth*0.05),),
                   ),
                 ),
@@ -49,7 +49,7 @@ class _WrittenSiteState extends State<WrittenSite> {
                 child:
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
-                  child: Text("Date :  ......\n"
+                  child: SelectableText("Date :  ......\n"
                       "The Head Master/Principal\n"
                       "Pilot high school, Jessore\n"
                       "Subject : ....................\n\n\n"
@@ -86,7 +86,7 @@ class _WrittenSiteState extends State<WrittenSite> {
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
                   child: Center(
-                    child: Text("Rules for writing Dialogue",
+                    child: SelectableText("Rules for writing Dialogue",
                       style: TextStyle(fontSize: screenWidth*0.05),),
                   ),
                 ),
@@ -101,7 +101,7 @@ class _WrittenSiteState extends State<WrittenSite> {
                 child:
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
-                  child: Text(
+                  child: SelectableText(
                     "Razu     :   Good Morning Mina\n"
                         "Mina     :   Good Morning Razu\n\n"
                         "Razu     :   How are you Mina?\n"

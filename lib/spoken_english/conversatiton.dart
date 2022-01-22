@@ -38,7 +38,7 @@ class _ConversationState extends State<Conversation> {
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
                   child: Center(
-                    child: Text("Conversation - 01",
+                    child: SelectableText("Conversation - 01",
                       style: TextStyle(fontSize: screenWidth*0.05),),
                   ),
                 ),
@@ -52,7 +52,7 @@ class _ConversationState extends State<Conversation> {
                 child:
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
-                  child: Text(
+                  child: SelectableText(
                     "Student      :    Good morning Sir.\n"
                         "Teacher      :   Good Morning\n"
                         "Student      :    May i sit here, Sir\n"
@@ -81,7 +81,7 @@ class _ConversationState extends State<Conversation> {
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
                   child: Center(
-                    child: Text("Conversation - 02",
+                    child: SelectableText("Conversation - 02",
                       style: TextStyle(fontSize: screenWidth*0.05),),
                   ),
                 ),
@@ -95,7 +95,7 @@ class _ConversationState extends State<Conversation> {
                 child:
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
-                  child: Text(
+                  child: SelectableText(
                     "Operator    :    hello, who is calling please?\n"
                         "Shamim     :   It's Shamim  from Gopalgonj, \n"
                         "                       May talk to Mr. Faruk, please.\n"
@@ -143,7 +143,7 @@ class _ConversationState extends State<Conversation> {
                 child:
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
-                  child: Text(
+                  child: SelectableText(
                     "Mistress    :    Who is there?\n"
                         "Stranger     :   It's me\n"
                         "Mistress    :   Who is me?\n"
@@ -197,7 +197,7 @@ class _ConversationState extends State<Conversation> {
                 child:
                 Padding(
                   padding:  EdgeInsets.all(screenWidth*0.04),
-                  child: Text(
+                  child: SelectableText(
                     "Unknown      :    What's the time please?\n"
                         "Me                 :   I am sorry. I don't have my watch on\n"
                         "                           right now.\n"

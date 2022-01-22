@@ -18,7 +18,7 @@ class _MakeSentenseState extends State<MakeSentense> {
         toolbarHeight: screenHeight*0.08,
         backgroundColor: Color(0xff0a7e8c),
         centerTitle: true,
-        title: Text("Make Sentense", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
+        title: SelectableText("Make Sentense", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
       ),
 
       body: SingleChildScrollView(
@@ -46,7 +46,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("I am দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("I am দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -54,7 +54,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  I am happy- আমি সুখী\n"
                                 "🍁  I am okay - আমি ঠিক আছি\n"
                                 "🍁  I am busy - আমি ব্যস্ত\n"
@@ -101,7 +101,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("keep দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("keep দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -109,7 +109,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  keep going -  যেতে থাকো।\n"
                                 "🍁  keep eating - খেতে থাকো।\n"
                                 "🍁  keep reading - পড়তে থাকো।\n"
@@ -156,7 +156,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Stop দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Stop দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -164,7 +164,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Stop writing - লেখা বন্ধ কর \n"
                                 "🍁  Stop smoking - ধুমপান বন্ধ কর  \n"
                                 "🍁  Stop playing - খেলা বন্ধ কর \n"
@@ -208,7 +208,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("No end দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("No end দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -216,7 +216,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
 
                             "🍁  No end to know - জানার শেষ  নেই \n"
                                 "🍁  No end to sad - দু:খের শেষ নেই\n"
@@ -257,7 +257,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Why & Who দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Why & Who দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -265,7 +265,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
 
                             "🍁  Why me? - আমি কেন?\n"
                                 "🍁  Why us? - আমরা কেন? \n"
@@ -306,7 +306,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("I had দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("I had দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -314,7 +314,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
 
                             "🍁  I had to go - আমাকে যেতে হয়েছিল। \n"
                                 "🍁  I had to eat - আমাকে খেতে হয়েছিল।\n"
@@ -353,7 +353,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Where দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Where দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -361,7 +361,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Where am I? - আমি কোথায় আছি? \n"
                                 "🍁  Where are you? - তুমি কোথায় আছো?\n"
                                 "🍁  Where is he?  - সে কোথায় আছে?\n"
@@ -400,7 +400,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Nothing to দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Nothing to দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -408,7 +408,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
 
                             "🍁  Nothing to see-কিছু দেখার নেই \n"
                                 "🍁  Nothing to write-কিছু লেখার নেই  \n"
@@ -452,7 +452,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("It can be দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("It can be দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -460,7 +460,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
 
                             "🍁  It can be done - এটা করা যেতে পারে।\n"
                                 "🍁  It can be bought- এটা কেনা যেতে পারে।\n"
@@ -505,7 +505,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Are you দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Are you দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -513,7 +513,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Are you hungry? - তুমি কি ক্ষুধার্থ? \n"
                                 "🍁  Are you married? - তুমি কি বিবাহিত?  \n"
                                 "🍁  Are you okay? - তুমি ঠিক আছতো? \n"
@@ -560,7 +560,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("As like as দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("As like as দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -568,7 +568,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  As like as mother - মায়ের মত\n"
                                 "🍁  As like as teacher - শিক্ষকের মত\n"
                                 "🍁  As like as bird - পাখির মত\n"
@@ -612,7 +612,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("No one can দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("No one can দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -620,7 +620,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  No one can recognize - কেউ চিনতে পারে না।\n"
                                 "🍁  No one can write - কেউ লিখতে পারে না।\n"
                                 "🍁  No one can give - কেউ দিতে পারে না।\n"
@@ -659,7 +659,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Need to & No Need দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Need to & No Need দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -667,7 +667,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Need to talk - কথা বলার দরকার আছে।\n"
                                 "🍁  Need to know - জানার দরকার আছে। \n"
                                 "🍁  Need to Learn - শেখার দরকার আছে।\n"
@@ -712,7 +712,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Used to দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Used to দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -720,7 +720,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Used to - অভ‍্যস্ত( অতীতে )।\n"
                                 "🍁  Used to talk - কথা বলতে অভ‍্যস্ত।\n"
                                 "🍁  Used to know - জানতে  অভ‍্যস্ত।\n"
@@ -758,7 +758,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("I am getting দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("I am getting দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -766,7 +766,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  I am getting bored - আমি বিরক্ত হচ্ছি।\n"
                                 "🍁  I am getting wet - আমি ভিজে যাচ্ছি।\n"
                                 "🍁  I am getting tired - আমি ক্লান্ত হচ্ছি।\n"
@@ -805,7 +805,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("This is দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("This is দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -813,7 +813,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  This is lovely - এটা সন্দর।\n"
                                 "🍁  This is sorrowful - এটা দুঃখজনক।\n"
                                 "🍁  This is cheap - এটা সস্তা।\n"
@@ -866,7 +866,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("It’s দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("It’s দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -874,7 +874,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  It’s raining- বৃষ্টি হচ্ছে।\n"
                                 "🍁  It’s spitting-  হালকা বৃষ্টি হচ্ছে ।\n"
                                 "🍁  It’s drizzling- ঝিরিঝিরি বৃষ্টি হচ্ছে।\n"
@@ -913,7 +913,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Can দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Can দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -921,7 +921,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Can I atone? আমি কি প্রায়শ্চিত্ত করতে পারি?\n"
                                 "🍁  Can you amuse? তুমি কি কৌতুক করতে পার?\n"
                                 "🍁  Can he avenge? সে কি প্রতিশোধ নিতে পারে?\n"
@@ -968,7 +968,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("Learn to দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("Learn to দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -976,7 +976,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  Learn to give - দিতে শিখুন।\n"
                                 "🍁  Learn to write - লিখতে শিখুন।\n"
                                 "🍁  Learn to read - পড়তে শিখুন।\n"
@@ -1018,7 +1018,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("How দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("How দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -1026,7 +1026,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  How many? - কতগুলো? \n"
                                 "🍁  How much? - কত পরিমান? \n"
                                 "🍁  How often - কত সময় পর? \n"
@@ -1078,7 +1078,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                           Padding(
                             padding:  EdgeInsets.only(top: screenHeight*0.02,
                                 bottom: screenHeight*0.02, left: screenWidth*0.05, right: screenWidth*0.05),
-                            child: Text("May দিয়ে বাক্য গঠন", style: TextStyle(
+                            child: SelectableText("May দিয়ে বাক্য গঠন", style: TextStyle(
                                 fontSize: screenWidth*0.05,
                                 color: Colors.teal, fontWeight: FontWeight.bold),),
                           ),
@@ -1086,7 +1086,7 @@ class _MakeSentenseState extends State<MakeSentense> {
                       ),
                       Padding(
                         padding:  EdgeInsets.only(left: screenWidth*0.02, top: screenHeight*0.01),
-                        child: Text(
+                        child: SelectableText(
                             "🍁  May I talk to you - \n"
                                 "       আমি কি আপনার সাথে কথা বলতে পারি? \n"
                                 "🍁  May I know your name? -\n"

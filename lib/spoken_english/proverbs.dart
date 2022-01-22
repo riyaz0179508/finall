@@ -1,6 +1,9 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:english_bd/translator/google_translator.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-
+String? text;
 class Proverbs extends StatefulWidget {
   const Proverbs({Key? key}) : super(key: key);
 
@@ -21,9 +24,11 @@ class _ProverbsState extends State<Proverbs> {
         title: Text("Proverbs", style: TextStyle(fontSize: screenWidth*0.05, color: Colors.white),),
       ),
 
-      body: SingleChildScrollView(
+      body:
+      SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
+        child:
+        Column(
           children: [
             SizedBox(height: 60,),
 
