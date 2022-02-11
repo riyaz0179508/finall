@@ -23,37 +23,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-    late BannerAd banner;
+
   @override
   Widget build(BuildContext context) {
-    return HomePage(ad: banner,);
+    return HomePage();
   }
 }
 
 
-
-
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({Key? key}) : super(key: key);
-//
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-//
-// class _MyHomePageState extends State<MyHomePage> {
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return HomePage();
-//   }
-// }
-
-
-
 class HomePage extends StatefulWidget {
-  BannerAd ad;
 
-   HomePage({Key? key, required this.ad}) : super(key: key);
+   HomePage({Key? key,}) : super(key: key);
 
 
   @override
@@ -64,33 +44,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
 
+  late BannerAd banner;
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final addState = Provider.of<AdState>(context);
+    addState.initialization.then((status) =>
+    {
+      setState(() {
+        banner = BannerAd(size: AdSize.banner,
+            adUnitId: addState.bannerAdUnitIt,
+            listener: BannerAdListener(
 
-  // @override
-  // void didChangeDependencies() {
-  //   super.didChangeDependencies();
-  //   final addState = Provider.of<AdState>(context);
-  //   addState.initialization.then((status) =>
-  //   {
-  //     setState(() {
-  //       banner = BannerAd(size: AdSize.banner,
-  //           adUnitId: addState.bannerAdUnitIt,
-  //           listener: BannerAdListener(
-  //
-  //             onAdLoaded: (Ad ad) => print('Ad loaded.'),
-  //             onAdFailedToLoad: (Ad ad, LoadAdError error) {
-  //               ad.dispose();
-  //               print('Ad failed to load: $error');
-  //             },
-  //             onAdOpened: (Ad ad) => print('Ad opened.'),
-  //             onAdClosed: (Ad ad) => print('Ad closed.'),
-  //             onAdImpression: (Ad ad) => print('Ad impression.'),
-  //           ),
-  //           request: AdRequest())..load();
-  //     }
-  //     )
-  //   });
-  // }
+              onAdLoaded: (Ad ad) => print('Ad loaded.'),
+              onAdFailedToLoad: (Ad ad, LoadAdError error) {
+                ad.dispose();
+                print('Ad failed to load: $error');
+              },
+              onAdOpened: (Ad ad) => print('Ad opened.'),
+              onAdClosed: (Ad ad) => print('Ad closed.'),
+              onAdImpression: (Ad ad) => print('Ad impression.'),
+            ),
+            request: AdRequest())..load();
+      }
+      )
+    });
+  }
 
 
 
@@ -382,12 +362,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            if(widget.ad == null)
+            if(banner == null)
               SizedBox(height: 50,)
             else
               Container(
                 height: 50,
-                child: AdWidget(ad: widget.ad),
+                child: AdWidget(ad: banner),
               )
           ],
         ),

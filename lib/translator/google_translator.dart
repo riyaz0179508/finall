@@ -1,9 +1,12 @@
 import 'dart:ui';
+import 'package:english_bd/screen/ad_state.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:translator/translator.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -26,7 +29,33 @@ class EasyTranslator extends StatefulWidget {
 
 class _EasyTranslatorState extends State<EasyTranslator> {
 
+   late BannerAd banner;
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final addState = Provider.of<AdState>(context);
+    addState.initialization.then((status) =>
+    {
+      setState(() {
+        banner = BannerAd(size: AdSize.banner,
+            adUnitId: addState.bannerAdUnitIt,
+            listener: BannerAdListener(
+
+              onAdLoaded: (Ad ad) => print('Ad loaded.'),
+              onAdFailedToLoad: (Ad ad, LoadAdError error) {
+                ad.dispose();
+                print('Ad failed to load: $error');
+              },
+              onAdOpened: (Ad ad) => print('Ad opened.'),
+              onAdClosed: (Ad ad) => print('Ad closed.'),
+              onAdImpression: (Ad ad) => print('Ad impression.'),
+            ),
+            request: AdRequest())..load();
+      }
+      )
+    });
+  }
 
   @override
   void initState() {
@@ -481,6 +510,13 @@ class _EasyTranslatorState extends State<EasyTranslator> {
                     ),
                   ),
                 ),
+                if(banner == null)
+                  SizedBox(height: 50,)
+                else
+                  Container(
+                    height: 50,
+                    child: AdWidget(ad: banner),
+                  )
 
 
               ],
@@ -500,4 +536,5 @@ class _EasyTranslatorState extends State<EasyTranslator> {
     });
 
   }
+
 }
