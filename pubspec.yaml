@@ -35,7 +35,6 @@ dependencies:
   fluttertoast: ^8.0.8
   share_plus: ^3.0.4
   connectivity_plus: ^2.2.0
-  google_mobile_ads: ^1.0.1
 
 
 

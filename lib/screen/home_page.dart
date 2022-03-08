@@ -2,7 +2,6 @@
 import 'package:english_bd/english_for_kids/kids.dart';
 import 'package:english_bd/grammar/english_grammer.dart';
 import 'package:english_bd/more_practice/practice_page.dart';
-import 'package:english_bd/screen/ad_state.dart';
 import 'package:english_bd/spoken_english/sentense_for_spoken_english.dart';
 import 'package:english_bd/translator/google_translator.dart';
 import 'package:english_bd/vucabulary/vucabulary_list.dart';
@@ -11,8 +10,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:provider/provider.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -23,6 +20,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,46 +33,11 @@ class HomePage extends StatefulWidget {
 
    HomePage({Key? key,}) : super(key: key);
 
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-
 class _HomePageState extends State<HomePage> {
-
-
-  late BannerAd banner;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final addState = Provider.of<AdState>(context);
-    addState.initialization.then((status) =>
-    {
-      setState(() {
-        banner = BannerAd(size: AdSize.banner,
-            adUnitId: addState.bannerAdUnitIt,
-            listener: BannerAdListener(
-
-              onAdLoaded: (Ad ad) => print('Ad loaded.'),
-              onAdFailedToLoad: (Ad ad, LoadAdError error) {
-                ad.dispose();
-                print('Ad failed to load: $error');
-              },
-              onAdOpened: (Ad ad) => print('Ad opened.'),
-              onAdClosed: (Ad ad) => print('Ad closed.'),
-              onAdImpression: (Ad ad) => print('Ad impression.'),
-            ),
-            request: AdRequest())..load();
-      }
-      )
-    });
-  }
-
-
-
-
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -357,22 +320,12 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-
                   ],
                 ),
               ),
             ),
-            if(banner == null)
-              SizedBox(height: 50,)
-            else
-              Container(
-                height: 50,
-                child: AdWidget(ad: banner),
-              )
           ],
         ),
-
-
       ),
     );
   }

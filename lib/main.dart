@@ -1,22 +1,9 @@
+
 import 'package:english_bd/screen/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:provider/provider.dart';
-import 'screen/ad_state.dart';
-
-
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  final initFuture = MobileAds.instance.initialize();
-  final adState = AdState(initFuture);
-
-  runApp(
-      Provider.value(
-        value: adState,
-        builder: (context, child) => const MyApp(),
-      )
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
